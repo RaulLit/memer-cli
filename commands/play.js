@@ -15,7 +15,7 @@ export async function play(name) {
     const localPath = localMemePath(name);
 
     if (await fs.pathExists(localPath)) {
-      return playAudio(localPath);
+      return playAudio(localPath, name);
     }
 
     // 2️⃣ fallback to bundled default meme
@@ -27,12 +27,12 @@ export async function play(name) {
     );
 
     if (await fs.pathExists(defaultPath)) {
-      return playAudio(defaultPath);
+      return playAudio(defaultPath, name);
     }
     
     console.log("Meme not found locally. Try: meme get " + name);
   } catch {
     const defaultPath = path.join(process.cmd(), "node_modules/meme-cli/sounds/default", `${name}.mp3`);
-    await playAudio(defaultPath);
+    await playAudio(defaultPath, name);
   }
 }

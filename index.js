@@ -4,8 +4,6 @@ import { play } from "./commands/play.js";
 import { list } from "./commands/list.js";
 import { get } from "./commands/get.js";
 import { random } from "./commands/random.js";
-import dotenv from "dotenv";
-dotenv.config();
 
 const program = new Command();
 
