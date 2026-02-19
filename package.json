@@ -1,0 +1,24 @@
+{
+  "name": "meme-cli",
+  "version": "1.0.0",
+  "description": "Play meme sounds from terminal",
+  "bin": {
+    "meme": "./index.js"
+  },
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Aditya Raul",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.13.5",
+    "chalk": "^5.6.2",
+    "commander": "^14.0.3",
+    "dotenv": "^17.3.1",
+    "fs-extra": "^11.3.3",
+    "ora": "^9.3.0",
+    "play-sound": "^1.1.6"
+  }
+}
