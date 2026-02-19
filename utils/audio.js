@@ -1,23 +1,18 @@
 import { Player } from "cli-sound";
-import { ensureWav } from "./convert.js";
 import os from "os";
+import { getPlayable } from "./convert.js";
 
 const player = new Player();
-
 let stopCurrent = null;
 
-export async function playAudio(file) {
+export async function playAudio(file, name) {
 
-  if (stopCurrent) {
-    stopCurrent();
-    stopCurrent = null;
-  }
+  if (stopCurrent) stopCurrent();
 
   let playable = file;
 
-  // Windows requires wav
   if (os.platform() === "win32") {
-    playable = await ensureWav(file);
+    playable = await getPlayable(name, file);
   }
 
   stopCurrent = player.play(playable, { volume: 1.0 });
