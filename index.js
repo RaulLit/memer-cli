@@ -17,6 +17,9 @@ program.command("get <name>").action(get);
 
 program.command("random").action(random);
 
-program.argument("[name]").action(play);
+program.argument("[name]").action((name) => {
+  if (name) play(name);
+  else program.help();
+});
 
 program.parse();
