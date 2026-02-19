@@ -1,8 +1,8 @@
-import { getLocalMemes } from "../utils/storage.js";
+import { getDefaultMemes } from "../utils/storage.js";
 import { play } from "./play.js";
 
 export async function random() {
-  const memes = await getLocalMemes();
+  const memes = await getDefaultMemes();
   if (!memes.length) return console.log("No memes downloaded");
 
   const pick = memes[Math.floor(Math.random * memes.length)];

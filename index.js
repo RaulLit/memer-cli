@@ -9,9 +9,7 @@ const program = new Command();
 
 program.name("meme").description("Terminal Meme Player");
 
-program.command("list").option("-r, --remote", "Show online memes").action((opts) => list(opts.remote));
-
-program.command("get <name>").action(get);
+program.command("list").action(list);
 
 program.command("random").action(random);
 

@@ -1,14 +1,7 @@
 import path from "path";
 import { playAudio } from "../utils/audio.js";
 import { localMemePath } from "../utils/storage.js";
-import { fileURLToPath } from "url";
 import fs from "fs-extra";
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
-// go one level up -> package root
-const PACKAGE_ROOT = path.join(__dirname, "..");
 
 export async function play(name) {
   try {
@@ -17,20 +10,8 @@ export async function play(name) {
     if (await fs.pathExists(localPath)) {
       return playAudio(localPath, name);
     }
-
-    // 2️⃣ fallback to bundled default meme
-    const defaultPath = path.join(
-      PACKAGE_ROOT,
-      "sounds",
-      "default",
-      `${name}.mp3`
-    );
-
-    if (await fs.pathExists(defaultPath)) {
-      return playAudio(defaultPath, name);
-    }
     
-    console.log("Meme not found locally. Try: meme get " + name);
+    console.log("Meme not found locally. Try: meme list");
   } catch {
     const defaultPath = path.join(process.cmd(), "node_modules/meme-cli/sounds/default", `${name}.mp3`);
     await playAudio(defaultPath, name);

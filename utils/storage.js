@@ -14,12 +14,8 @@ const __dirname = path.dirname(__filename);
 export const PACKAGE_ROOT = path.resolve(__dirname, "..");
 
 // user storage
-export const BASE_DIR = path.join(os.homedir(), ".meme-cli");
-export const MEME_DIR = path.join(BASE_DIR, "memes");
-export const CACHE_DIR = path.join(BASE_DIR, "cache");
-
-// bundled defaults
-const DEFAULT_MEME_DIR = path.join(PACKAGE_ROOT, "sounds", "default");
+export const CACHE_DIR = path.join(path.join(PACKAGE_ROOT, "sounds"), "cache");
+export const DEFAULT_MEME_DIR = path.join(PACKAGE_ROOT, "sounds", "default");
 
 /* -------------------------------------------------- */
 /* HELPERS                                            */
@@ -44,10 +40,6 @@ async function safeReadMp3Names(dir) {
 /* STORAGE INIT                                       */
 /* -------------------------------------------------- */
 
-export async function initStorage() {
-  await fs.ensureDir(MEME_DIR);
-}
-
 export async function initCache() {
   await fs.ensureDir(CACHE_DIR);
 }
@@ -56,13 +48,8 @@ export async function initCache() {
 /* LOCAL MEMES                                        */
 /* -------------------------------------------------- */
 
-export async function getLocalMemes() {
-  await initStorage();
-  return safeReadMp3Names(MEME_DIR);
-}
-
 export function localMemePath(name) {
-  return path.join(MEME_DIR, `${name}.mp3`);
+  return path.join(DEFAULT_MEME_DIR, `${name}.mp3`);
 }
 
 /* -------------------------------------------------- */
