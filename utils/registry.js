@@ -1,6 +1,6 @@
 import axios from "axios";
-import fs, { write } from "fs-extra";
-import { localMemePath } from "./storage";
+import fs from "fs-extra";
+import { localMemePath } from "./storage.js";
 
 const API = process.env.API || "https://meme.adityaraul.in";
 

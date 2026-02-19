@@ -1,5 +1,5 @@
-import { getLocalMemes } from "../utils/storage";
-import { play } from "./play";
+import { getLocalMemes } from "../utils/storage.js";
+import { play } from "./play.js";
 
 export async function random() {
   const memes = await getLocalMemes();

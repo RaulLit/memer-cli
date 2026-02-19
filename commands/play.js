@@ -1,6 +1,6 @@
-import path from"path";
-import { playAudio } from "../utils/audio";
-import { localMemePath } from "../utils/storage";
+import path from "path";
+import { playAudio } from "../utils/audio.js";
+import { localMemePath } from "../utils/storage.js";
 
 export async function play(name) {
   try {

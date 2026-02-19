@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 import { Command } from "commander";
-import { play } from "./commands/play";
-import { list } from "./commands/list";
-import { get } from "./commands/get";
-import { random } from "./commands/random";
+import { play } from "./commands/play.js";
+import { list } from "./commands/list.js";
+import { get } from "./commands/get.js";
+import { random } from "./commands/random.js";
 import dotenv from "dotenv";
 dotenv.config();
 

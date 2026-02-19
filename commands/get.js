@@ -1,5 +1,5 @@
 import ora from "ora";
-import { downloadMeme } from "../utils/registry";
+import { downloadMeme } from "../utils/registry.js";
 
 export async function get(name) {
   const spinner = ora(`Downloading ${name}... `).start();
