@@ -1,17 +1,32 @@
 {
-  "name": "meme-cli",
+  "name": "memer-cli",
   "version": "1.0.0",
   "description": "Play meme sounds from terminal",
   "bin": {
-    "meme": "./index.js"
+    "memer": "index.js"
   },
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
+  "keywords": [
+    "cli",
+    "meme",
+    "soundboard",
+    "terminal"
+  ],
+  "files": [
+    "index.js",
+    "commands",
+    "utils",
+    "sounds"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RaulLit/meme-cli.git"
+  },
   "author": "Aditya Raul",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "@ffmpeg-installer/ffmpeg": "^1.1.0",
     "axios": "^1.13.5",
@@ -20,7 +35,6 @@
     "commander": "^14.0.3",
     "fluent-ffmpeg": "^2.1.3",
     "fs-extra": "^11.3.3",
-    "ora": "^9.3.0",
-    "play-sound": "^1.1.6"
+    "ora": "^9.3.0"
   }
 }
