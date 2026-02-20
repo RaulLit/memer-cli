@@ -7,7 +7,7 @@ import { random } from "./commands/random.js";
 
 const program = new Command();
 
-program.name("meme").description("Terminal Meme Player");
+program.name("memer").description("Terminal Meme Player");
 
 program.command("list").action(list);
 
