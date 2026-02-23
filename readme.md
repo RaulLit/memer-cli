@@ -1,5 +1,5 @@
 
-# Memer 🎧
+# Memer-CLI 🎧
 
 **A terminal meme soundboard.**
 
