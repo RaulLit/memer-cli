@@ -5,7 +5,7 @@ import { getPlayable } from "./convert.js";
 const player = new Player();
 let stopCurrent = null;
 
-export async function playAudio(file, name) {
+export async function playAudio(file, name, volume = 100) {
 
   if (stopCurrent) stopCurrent();
 
@@ -15,5 +15,6 @@ export async function playAudio(file, name) {
     playable = await getPlayable(name, file);
   }
 
-  stopCurrent = player.play(playable, { volume: 1.0 });
+  const normalizedVolume = Math.max(0, Math.min(100, parseInt(volume))) / 100;
+  stopCurrent = player.play(playable, { volume: normalizedVolume });
 }

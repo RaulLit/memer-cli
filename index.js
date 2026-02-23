@@ -13,9 +13,12 @@ program.command("list").action(list);
 
 program.command("random").action(random);
 
-program.argument("[name]").action((name) => {
-  if (name) play(name);
-  else program.help();
-});
+program
+  .argument("[name]")
+  .option("-v, --volume <number>", "Volume level (0-100) Only supported by some players.", "100")
+  .action((name, options) => {
+    if (name) play(name, options.volume);
+    else program.help();
+  });
 
 program.parse();
